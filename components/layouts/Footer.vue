@@ -18,7 +18,7 @@ const { title, email, telegram, blog, twitter, mastodon, github } = useAppConfig
         target="_blank"
         title="HTML.ZONE"
       >
-        &copy; {{ new Date().getFullYear() }} Made By Departemen IT Kencana
+        &copy; {{ new Date().getFullYear() }} Made By Waseem Gul
       </a>
       <span
         class="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start"
