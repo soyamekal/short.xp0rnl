@@ -13,9 +13,9 @@ const { title, email, telegram, blog, twitter, mastodon, github } = useAppConfig
         :title="title"
       >{{ title }}</a>
      <a
-        class="mt-4 text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l sm:border-gray-200 sm:mt-0"
+        
 /
-      >
+      
         &copy; {{ new Date().getFullYear() }} - - Made By Waseem Gul
       </a>
       <span
