@@ -24,6 +24,8 @@ const isEdit = !!props.link.id
 const EditLinkSchema = LinkSchema.pick({
   url: true,
   slug: true,
+  title: true,
+  description: true,
   image: true,
 }).extend({
   optional: LinkSchema.omit({
@@ -63,9 +65,11 @@ const dependencies = [
 const form = useForm({
   validationSchema: toTypedSchema(EditLinkSchema),
   initialValues: {
-    slug: link.value.slug,
-    url: link.value.url,
-    image: link.value.image,
+  slug: link.value.slug,
+  url: link.value.url,
+  title: link.value.title,
+  description: link.value.description,
+  image: link.value.image,
     optional: {
       comment: link.value.comment,
     },
@@ -106,9 +110,11 @@ onMounted(() => {
 
 async function onSubmit(formData) {
   const link = {
-    url: formData.url,
-    slug: formData.slug,
-    image: formData.image,
+  url: formData.url,
+  slug: formData.slug,
+  title: formData.title,
+  description: formData.description,
+  image: formData.image,
     ...(formData.optional || []),
     expiration: formData.optional?.expiration ? date2unix(formData.optional?.expiration, 'end') : undefined,
   }
