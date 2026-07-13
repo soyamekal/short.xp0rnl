@@ -115,7 +115,7 @@ async function onSubmit(formData) {
   title: formData.title,
   description: formData.description,
   image: formData.image,
-    ...(formData.optional || []),
+    ...(formData.optional || {}),
     expiration: formData.optional?.expiration ? date2unix(formData.optional?.expiration, 'end') : undefined,
   }
   const { link: newLink } = await useAPI(isEdit ? '/api/link/edit' : '/api/link/create', {
