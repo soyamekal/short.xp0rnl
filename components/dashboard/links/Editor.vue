@@ -24,6 +24,7 @@ const isEdit = !!props.link.id
 const EditLinkSchema = LinkSchema.pick({
   url: true,
   slug: true,
+  image: true,
 }).extend({
   optional: LinkSchema.omit({
     id: true,
@@ -64,6 +65,7 @@ const form = useForm({
   initialValues: {
     slug: link.value.slug,
     url: link.value.url,
+    image: link.value.image,
     optional: {
       comment: link.value.comment,
     },
@@ -106,6 +108,7 @@ async function onSubmit(formData) {
   const link = {
     url: formData.url,
     slug: formData.slug,
+    image: formData.image,
     ...(formData.optional || []),
     expiration: formData.optional?.expiration ? date2unix(formData.optional?.expiration, 'end') : undefined,
   }
