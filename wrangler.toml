@@ -2,3 +2,7 @@ name = "short-xp0rnl"
 compatibility_date = "2026-07-15"
 
 pages_build_output_dir = "dist"
+
+[[kv_namespaces]]
+binding = "KV_BINDING"
+id = "c88a6d385929407c9ce9e0d5ef5aa00b"
