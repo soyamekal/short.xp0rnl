@@ -1,7 +1,10 @@
+name = "short-xp0rnl"
+
+pages_build_output_dir = "dist"
+
+compatibility_date = "2024-07-08"
+
 upload_source_maps = true
 
 [dev]
 port = 3000
-
-[ai]
-binding = "AI"
