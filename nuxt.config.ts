@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
   ],
+
   devtools: { enabled: true },
 
   colorMode: {
@@ -27,6 +28,7 @@ export default defineNuxtConfig({
     aiPrompt: `You are a URL shortening assistant, please shorten the URL provided by the user into a SLUG. The SLUG information must come from the URL itself, do not make any assumptions. A SLUG is human-readable and should not exceed three words and can be validated using regular expressions {slugRegex} . Only the best one is returned, the format must be JSON reference {"slug": "example-slug"}`,
     caseSensitive: false,
     listQueryLimit: 500,
+
     public: {
       previewMode: '',
       slugDefaultLength: '6',
@@ -37,9 +39,11 @@ export default defineNuxtConfig({
     '/': {
       prerender: true,
     },
+
     '/dashboard/**': {
       ssr: false,
     },
+
     '/dashboard': {
       redirect: '/dashboard/links',
     },
@@ -48,8 +52,9 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-07-08',
 
   nitro: {
+    preset: 'cloudflare-pages',
+
     experimental: {
-      // Enable Server API documentation within NuxtHub
       openAPI: true,
     },
   },
@@ -69,4 +74,5 @@ export default defineNuxtConfig({
       standalone: false,
     },
   },
+
 })
